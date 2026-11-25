@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import { getConfig } from '../lib/data';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://irwantositous.my.id/';
 
@@ -114,6 +115,7 @@ export default function RootLayout({ children }) {
       <body className="bg-[#000000] text-[#f4f4f4] antialiased overflow-x-hidden">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
